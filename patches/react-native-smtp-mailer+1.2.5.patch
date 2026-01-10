@@ -1,0 +1,50 @@
+diff --git a/node_modules/react-native-smtp-mailer/android/build.gradle b/node_modules/react-native-smtp-mailer/android/build.gradle
+index 822b5a0..fc2661e 100644
+--- a/node_modules/react-native-smtp-mailer/android/build.gradle
++++ b/node_modules/react-native-smtp-mailer/android/build.gradle
+@@ -2,22 +2,23 @@
+ buildscript {
+     repositories {
+         google()
+-        jcenter()
++        mavenCentral()
+     }
+
+     dependencies {
+-        classpath 'com.android.tools.build:gradle:3.0.0'
++        classpath 'com.android.tools.build:gradle:8.5.0'
+     }
+ }
+
+ apply plugin: 'com.android.library'
+
+ android {
+-    compileSdkVersion 28
++    compileSdkVersion 36
++    namespace 'com.rnsmtpmailer'
+
+     defaultConfig {
+-        minSdkVersion 16
+-        targetSdkVersion 22
++        minSdkVersion 24
++        targetSdkVersion 36
+         versionCode 1
+         versionName "1.0"
+     }
+@@ -34,4 +35,3 @@ dependencies {
+     implementation 'com.facebook.react:react-native:+'
+     implementation fileTree(dir: 'libs', include: '*.jar')
+ }
+-
+diff --git a/node_modules/react-native-smtp-mailer/android/src/main/AndroidManifest.xml b/node_modules/react-native-smtp-mailer/android/src/main/AndroidManifest.xml
+index 1234567..abcdefg 100644
+--- a/node_modules/react-native-smtp-mailer/android/src/main/AndroidManifest.xml
++++ b/node_modules/react-native-smtp-mailer/android/src/main/AndroidManifest.xml
+@@ -1,6 +1,5 @@
+-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+-          package="com.rnsmtpmailer">
++<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+ <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+ <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+ <uses-permission android:name="android.permission.INTERNET"/>
+ </manifest>
