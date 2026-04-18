@@ -20,9 +20,9 @@ jobs:
         id: create_pr
         uses: repo-sync/pull-request@v2
         env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          github_token: ${{ secrets.GH_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           destination_branch: 'main'
           source_branch: ''
           pr_title: '${{ steps.branch_name.outputs.branch }}'
