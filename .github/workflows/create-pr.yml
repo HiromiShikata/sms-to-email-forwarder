@@ -19,6 +19,8 @@ jobs:
       - name: Create Pull Request
         id: create_pr
         uses: repo-sync/pull-request@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
         with:
           github_token: ${{ secrets.GH_TOKEN }}
           destination_branch: 'main'
